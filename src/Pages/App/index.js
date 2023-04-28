@@ -8,29 +8,55 @@ import axios from "axios"
 import NavBar from '../../Components/NavBar';
 import { useQuery,gql } from '@apollo/client';
 
-
+const QUERY = gql`
+  
+  
+query Assets {
+  pins {
+    artist
+    city
+    location {
+      latitude
+      longitude
+    }
+    image {
+      url
+    }
+    postalCode
+    state
+    street
+  }
+}
+`;
 
 const MapApp =()=> {
-  const [pins, setPins] = useState([])
+  const { loading, error, data } = useQuery(QUERY,{});
+ 
+
+  // const [pins, setPins] = useState([])
   const [showPopup, setShowPopup] = useState(true);
   const [popupInfo, setPopupInfo] = useState(null);
-  const slash = "http://localhost:4000/api"
+  // const slash = "http://localhost:4000/api"
 
-  useEffect(()=>{
-    const getPins = async () =>{
-      try {
-        const allPins = await axios.get(slash+'/pins');
-        setPins(allPins.data)
-      } catch (error) {
-        console.log(error)
-      }
-    }
-    getPins();
-  },[])
+  // useEffect(()=>{
+  //   const getPins = async () =>{
+  //     try {
+  //       const allPins = await axios.get(slash+'/pins');
+  //       setPins(allPins.data)
+  //     } catch (error) {
+  //       console.log(error)
+  //     }
+  //   }
+  //   getPins();
+  // },[])
+
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>Error :(</p>;
+  const {pins}  = data;
 
   return(
-    
-<div className='container'>
+    <div className='container'>
+    {console.log(data)}
     <div className=" row">
       <NavBar className=" columns twelve"/>
     </div>
@@ -45,22 +71,22 @@ const MapApp =()=> {
           }}
           style={{height: '100vh'}}
           mapStyle="mapbox://styles/mapbox/light-v10"
-          mapboxAccessToken={process.env.REACT_APP_MAPBOX}
+          mapboxAccessToken={process.env.REACT_APP_MAPBOX_GL_ACCESS_TOKEN}
         >
 
 
 
           {
-            pins.map((city,index)=>{
+            pins.map((pin,index)=>{
           return <Marker
             key={`marker-${index}`}
-            longitude={city.lng}
-            latitude={city.lat}
+            longitude={pin.location.longitude}
+            latitude={pin.location.longitude}
             color="dodgerblue"
             anchor="bottom"
             onClick={e => {
                 e.originalEvent.stopPropagation();
-                setPopupInfo(city);
+                setPopupInfo(pin);
               }}
           />
         })}
@@ -69,8 +95,8 @@ const MapApp =()=> {
         {popupInfo && (
               <Popup
                 anchor="top"
-                longitude={Number(popupInfo.lng)}
-                latitude={Number(popupInfo.lat)}
+                longitude={Number(popupInfo.longitude)}
+                latitude={Number(popupInfo.latitude)}
                 onClose={() => setPopupInfo(null)}
               >
                 <div>
