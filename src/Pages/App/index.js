@@ -78,8 +78,10 @@ const MapApp =()=> {
 
           {
             pins.map((pin,index)=>{
+
+              
           return <Marker
-            key={`marker-${index}`}
+            key={index}
             longitude={pin.location.longitude}
             latitude={pin.location.longitude}
             color="dodgerblue"
@@ -88,7 +90,9 @@ const MapApp =()=> {
                 e.originalEvent.stopPropagation();
                 setPopupInfo(pin);
               }}
-          />
+          /> 
+  
+            
         })}
     
 

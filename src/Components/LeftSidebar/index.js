@@ -9,8 +9,8 @@ export default function LeftSidebar({pins}) {
         </div>
         <br></br>
        <div className='loc-list'>
-         {pins.map((pin)=>{
-            return <li className='loc-list-item'>
+         {pins.map((pin,index)=>{
+            return <li className='loc-list-item' key={index}>
 
             <span>{pin.Street}, {pin.PostalCode}</span><br></br>
             Artist: {pin.Artist}<br></br>
