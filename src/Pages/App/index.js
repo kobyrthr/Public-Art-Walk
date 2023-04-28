@@ -6,6 +6,8 @@ import LeftSidebar from '../../Components/LeftSidebar';
 import PlaceCard from '../../Components/PlaceCard';
 import axios from "axios"
 import NavBar from '../../Components/NavBar';
+import { useQuery,gql } from '@apollo/client';
+
 
 
 const MapApp =()=> {
