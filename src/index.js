@@ -1,15 +1,23 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import ReactDOM from 'react-dom/client';
+import 'mapbox-gl/dist/mapbox-gl.css';
+import './normalize.css';
+import './skeleton.css';
 import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-import { sendToVercelAnalytics } from './vitals';
+import Home from './Pages/Home';
+import MapApp from './Pages/App';
+import SubmitPage from './Pages/Submit page';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <BrowserRouter>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/Map" element={<MapApp />} />
+      <Route path="/suggestions" element={<SubmitPage/>} />
+    </Routes>  
+  </BrowserRouter>
 );
-
-reportWebVitals(sendToVercelAnalytics);
