@@ -67,11 +67,12 @@ const MapApp =()=> {
           initialViewState={{
             longitude: -76.6122,
             latitude: 39.2904,
-            zoom: 12
+            zoom: 12,
+            pitch: 60
           }}
           style={{height: '100vh'}}
           mapStyle="mapbox://styles/mapbox/light-v10"
-          mapboxAccessToken={process.env.REACT_APP_MAPBOX_GL_ACCESS_TOKEN}
+          mapboxAccessToken='pk.eyJ1Ijoia29iaW5hcnQxIiwiYSI6ImNqNWNqeDdzejBiNHgyeHFsNmRhMnFnMmgifQ.KvSGBJk0oJq07m4Ma8rzBw'
         >
 
           {
@@ -84,12 +85,12 @@ const MapApp =()=> {
             longitude={pin.location.longitude}
             latitude={pin.location.latitude}
             color="dodgerblue"
-            anchor="bottom"
+            anchor="right"
             onClick={e => {
                 e.originalEvent.stopPropagation();
                 setPopupInfo(pin);
               }}
-          /> 
+          />  
           </>
   
             
