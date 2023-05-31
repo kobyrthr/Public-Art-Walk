@@ -1,12 +1,18 @@
 import React, { useRef,useEffect, useState, useMemo } from 'react';
 /* eslint import/no-webpack-loader-syntax: off */
-import Map, {Marker, Popup} from 'react-map-gl';
+import ReactMapGL, { FlyToInterpolator, NavigationControl, Marker, Popup} from 'react-map-gl';
+import 'mapbox-gl/dist/mapbox-gl.css';
+import mapboxgl from 'mapbox-gl';
 import CITIES from '../../../src/data/cities.json'
 import LeftSidebar from '../../Components/LeftSidebar';
 import PlaceCard from '../../Components/PlaceCard';
 import axios from "axios"
 import NavBar from '../../Components/NavBar';
 import { useQuery,gql } from '@apollo/client';
+
+// @ts-ignore
+    // eslint-disable-next-line import/no-webpack-loader-syntax, import/no-unresolved
+    mapboxgl.workerClass = require('worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker').default;
 
 const QUERY = gql`
   
@@ -63,11 +69,11 @@ const MapApp =()=> {
     <div className='row'>
       <LeftSidebar pins={pins}/>
       <div className='map-wrapper columns eight'>
-        <Map
+        <ReactMapGL
           initialViewState={{
             longitude: -76.6122,
             latitude: 39.2904,
-            zoom: 12
+            zoom: 12,
           }}
           style={{height: '100vh'}}
           mapStyle="mapbox://styles/mapbox/light-v10"
@@ -115,7 +121,7 @@ const MapApp =()=> {
 
         
 
-        </Map>
+        </ReactMapGL>
       </div>
     
     </div>
