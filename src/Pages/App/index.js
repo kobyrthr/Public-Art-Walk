@@ -52,11 +52,11 @@ const MapApp =()=> {
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error :(</p>;
-  const {pins}  = data;
+  const pins  = data.pins;
 
   return(
     <div className='container'>
-    {console.log(data)}
+    {console.log(data.pins)}
     <div className=" row">
       <NavBar className=" columns twelve"/>
     </div>
@@ -74,16 +74,15 @@ const MapApp =()=> {
           mapboxAccessToken={process.env.REACT_APP_MAPBOX_GL_ACCESS_TOKEN}
         >
 
-
-
           {
             pins.map((pin,index)=>{
 
-              
-          return <Marker
+          return <>
+          {console.log(`I am a pin: ${pin}`)}
+          <Marker
             key={index}
             longitude={pin.location.longitude}
-            latitude={pin.location.longitude}
+            latitude={pin.location.latitude}
             color="dodgerblue"
             anchor="bottom"
             onClick={e => {
@@ -91,6 +90,7 @@ const MapApp =()=> {
                 setPopupInfo(pin);
               }}
           /> 
+          </>
   
             
         })}
@@ -99,17 +99,17 @@ const MapApp =()=> {
         {popupInfo && (
               <Popup
                 anchor="top"
-                longitude={Number(popupInfo.longitude)}
-                latitude={Number(popupInfo.latitude)}
+                longitude={Number(popupInfo.location.longitude)}
+                latitude={Number(popupInfo.location.latitude)}
                 onClose={() => setPopupInfo(null)}
               >
                 <div>
 
-                  <strong>Artist</strong>: {popupInfo.Artist}<br></br>
-                  <strong>Address</strong>: {popupInfo.Street}, PostalCode: {popupInfo.PostalCode}<br></br>
-                  <strong>Year</strong>: {popupInfo.Year}<br></br>
+                  <strong>Artist</strong>: {popupInfo.artist}<br></br>
+                  <strong>Address</strong>: {popupInfo.street}, PostalCode: {popupInfo.postalCode}<br></br>
+                  {/* <strong>Year</strong>: {popupInfo.Year}<br></br> */}
                 </div>
-                <img width="100%" src={popupInfo.img_url} />
+                <img width="100%" src={popupInfo.image.url} />
               </Popup>
             )}
 
