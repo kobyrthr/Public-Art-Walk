@@ -99,17 +99,17 @@ const MapApp =()=> {
         {popupInfo && (
               <Popup
                 anchor="top"
-                longitude={Number(popupInfo.longitude)}
-                latitude={Number(popupInfo.latitude)}
+                longitude={Number(popupInfo.location.longitude)}
+                latitude={Number(popupInfo.location.latitude)}
                 onClose={() => setPopupInfo(null)}
               >
                 <div>
 
-                  <strong>Artist</strong>: {popupInfo.Artist}<br></br>
-                  <strong>Address</strong>: {popupInfo.Street}, PostalCode: {popupInfo.PostalCode}<br></br>
-                  <strong>Year</strong>: {popupInfo.Year}<br></br>
+                  <strong>Artist</strong>: {popupInfo.artist}<br></br>
+                  <strong>Address</strong>: {popupInfo.street}, PostalCode: {popupInfo.postalCode}<br></br>
+                  {/* <strong>Year</strong>: {popupInfo.Year}<br></br> */}
                 </div>
-                <img width="100%" src={popupInfo.img_url} />
+                <img width="100%" src={popupInfo.image.url} />
               </Popup>
             )}
 
