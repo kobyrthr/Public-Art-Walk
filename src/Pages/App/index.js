@@ -52,11 +52,11 @@ const MapApp =()=> {
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error :(</p>;
-  const {pins}  = data;
+  const pins  = data.pins;
 
   return(
     <div className='container'>
-    {console.log(data)}
+    {console.log(data.pins)}
     <div className=" row">
       <NavBar className=" columns twelve"/>
     </div>
@@ -74,16 +74,15 @@ const MapApp =()=> {
           mapboxAccessToken={process.env.REACT_APP_MAPBOX_GL_ACCESS_TOKEN}
         >
 
-
-
           {
             pins.map((pin,index)=>{
 
-              
-          return <Marker
+          return <>
+          {console.log(`I am a pin: ${pin}`)}
+          <Marker
             key={index}
             longitude={pin.location.longitude}
-            latitude={pin.location.longitude}
+            latitude={pin.location.latitude}
             color="dodgerblue"
             anchor="bottom"
             onClick={e => {
@@ -91,6 +90,7 @@ const MapApp =()=> {
                 setPopupInfo(pin);
               }}
           /> 
+          </>
   
             
         })}
