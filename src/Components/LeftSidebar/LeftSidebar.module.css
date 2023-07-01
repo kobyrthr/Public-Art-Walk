@@ -1,12 +1,5 @@
 
-.sidebar {
-    width: 25vw;
-    height: 100%;
-    top: 0;
-    left: 0;
-    overflow: hidden;
-    border-right: 1px solid rgba(0, 0, 0, 0.25);
-  }
+
 
 .listings .item {
     border-bottom: 1px solid #eee;
@@ -50,14 +43,3 @@
       }
 
 /* MOBILE STYLING */
-@media screen and (max-width: 768px) {
-
-    .sidebar{
-      width: 100vw;
-    }
-    .row{
-    flex-direction: column-reverse;
-  }
-  
-  }
-  
