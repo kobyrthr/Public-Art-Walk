@@ -67,9 +67,9 @@ const MapPage =()=> {
     <div className="row">
       <NavBar className=" columns twelve"/>
     </div>
-    <div className='row'>
+    <div className={styles.section}>
       <LeftSidebar pins={pins}/>
-      <div className='map-wrapper columns eight'>
+      <div className={styles.mapWrapper}>
         <ReactMapGL
           initialViewState={{
             longitude: -76.6122,

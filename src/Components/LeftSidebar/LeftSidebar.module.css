@@ -48,3 +48,16 @@
       border-bottom: 1px solid #EEEEEE;
       padding: 8px;
       }
+
+/* MOBILE STYLING */
+@media screen and (max-width: 768px) {
+
+    .sidebar{
+      width: 100vw;
+    }
+    .row{
+    flex-direction: column-reverse;
+  }
+  
+  }
+  
