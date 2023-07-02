@@ -1,0 +1,19 @@
+.section{
+    display: flex;
+    flex-direction: row;
+}
+
+.mapWrapper{
+    width: 100%;
+}
+@media screen and (max-width: 768px) {
+
+    .sidebar{
+      width: 100vw;
+    }
+    .section{
+    flex-direction: column-reverse;
+  }
+  
+  }
+

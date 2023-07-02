@@ -1,0 +1,92 @@
+/* MAPBOX COMPONENT STYLING */
+.listings .item {
+    border-bottom: 1px solid #eee;
+    padding: 10px;
+    text-decoration: none;
+  }
+  
+.listings .item:last-child { border-bottom: none; }
+  
+.listings .item .title {
+    display: block;
+    font-weight: 700;
+  }
+  
+.listings .item .title small { font-weight: 400; }
+  
+.listings .item.active .title,
+.listings .item .title:hover { color: #8cc63f; }
+  
+.listings .item.active {
+    background-color: #f8f8f8;
+    
+  }
+
+/* CUSTOM COMPONENT STYLING */
+.sidebar {
+    width: 25vw;
+    height: 100%;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    border-right: 1px solid rgba(0, 0, 0, 0.25);
+    position: sticky;
+    bottom: 0;
+    z-index: 10;
+    background-color: rgba(255, 255, 255, 0);
+
+  }
+.locList{
+    display: flex;
+    flex-direction: column;
+    width: 25vw;
+}
+    
+.locList span{
+    font-family: 'Playfair Display', serif;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+    
+.locListItem{
+    list-style: none;
+    border-bottom: 1px solid #EEEEEE;
+    padding: 8px;
+    min-width: 200px;
+}
+
+/* CUSTOM COMPONENT MOBILE STYLING */
+@media screen and (max-width: 768px) {
+
+    .sidebar{
+        width: 100vw;
+        position: sticky;
+        bottom: 0;
+        z-index: 10;
+        background-color: white;
+    }
+    .section{
+        flex-direction: column-reverse;
+    }
+    .locList{
+        display: flex;
+        flex-direction: row;
+        overflow: auto;
+        width: 100%;
+    }
+        
+    .locList span{
+        font-family: 'Playfair Display', serif;
+        font-weight: bold;
+        letter-spacing: 1px;
+    }
+        
+    .locListItem{
+        list-style: none;
+        border-bottom: 1px solid #EEEEEE;
+        padding: 8px;
+        min-width: 200px;
+    }
+  
+}
+

@@ -3,12 +3,13 @@ import React, { useRef,useEffect, useState, useMemo } from 'react';
 import ReactMapGL, { FlyToInterpolator, NavigationControl, Marker, Popup} from 'react-map-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import mapboxgl from 'mapbox-gl';
-import CITIES from '../../../src/data/cities.json'
+import CITIES from '../../data/cities.json'
 import LeftSidebar from '../../Components/LeftSidebar';
 import PlaceCard from '../../Components/PlaceCard';
 import axios from "axios"
 import NavBar from '../../Components/NavBar';
 import { useQuery,gql } from '@apollo/client';
+import styles from "./MapPage.module.css";
 
 // @ts-ignore
     // eslint-disable-next-line import/no-webpack-loader-syntax, import/no-unresolved
@@ -35,7 +36,7 @@ query Assets {
 }
 `;
 
-const MapApp =()=> {
+const MapPage =()=> {
   const { loading, error, data } = useQuery(QUERY,{});
  
 
@@ -62,13 +63,13 @@ const MapApp =()=> {
 
   return(
     <div className='container'>
-    {console.log(data.pins)}
-    <div className=" row">
+    {/* {console.log(data.pins)} */}
+    <div className="row">
       <NavBar className=" columns twelve"/>
     </div>
-    <div className='row'>
+    <div className={styles.section}>
       <LeftSidebar pins={pins}/>
-      <div className='map-wrapper columns eight'>
+      <div className={styles.mapWrapper}>
         <ReactMapGL
           initialViewState={{
             longitude: -76.6122,
@@ -132,4 +133,4 @@ const MapApp =()=> {
 
 }
 
-export default MapApp  
+export default MapPage  
