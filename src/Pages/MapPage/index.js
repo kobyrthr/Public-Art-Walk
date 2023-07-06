@@ -39,7 +39,6 @@ query Assets {
 const MapPage =()=> {
   const { loading, error, data } = useQuery(QUERY,{});
  
-
   // const [pins, setPins] = useState([])
   const [showPopup, setShowPopup] = useState(true);
   const [popupInfo, setPopupInfo] = useState(null);

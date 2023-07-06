@@ -23,11 +23,13 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <ApolloProvider client={client}>
     <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<LandingPage />} />
-        <Route path="/Map" element={<MapPage />} />
-        <Route path="/suggestions" element={<SubmitPage/>} />
-      </Routes>  
+      <ChakraProvider>
+        <Routes>
+          <Route path="/" element={<LandingPage />} />
+          <Route path="/Map" element={<MapPage />} />
+          <Route path="/suggestions" element={<SubmitPage/>} />
+        </Routes>  
+      </ChakraProvider>      
     </BrowserRouter>
   </ApolloProvider>  
 
