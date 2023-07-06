@@ -1,7 +1,7 @@
 import { Icon } from '@chakra-ui/react'
 import { FiChevronDown } from 'react-icons/fi'
 
-export const PopoverIcon = (props) => {
+export const PopOverIcon = (props) => {
   const iconStyles = {
     transform: props.isOpen ? 'rotate(-180deg)' : undefined,
     transition: 'transform 0.2s',

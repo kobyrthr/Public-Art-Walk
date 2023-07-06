@@ -1,6 +1,6 @@
 import React from 'react'
 import { MobileDrawer } from './MobileDrawer/MobileDrawer'
-import { PopoverIcon } from './PopOverIcon/PopOverIcon'
+import { PopOverIcon } from './PopOverIcon/PopOverIcon'
 import { DocumentCollapse } from '.DocumentCollapse/DocumentCollapse'
 
 function NavBar() {
@@ -8,7 +8,7 @@ function NavBar() {
     <div className='navbar columns twelve'>
         <div>
           <MobileDrawer></MobileDrawer>
-          <PopoverIcon></PopoverIcon>
+          <PopOverIcon></PopOverIcon>
           <DocumentCollapse></DocumentCollapse>
         </div>
         <h1> Public Art Walk</h1> 

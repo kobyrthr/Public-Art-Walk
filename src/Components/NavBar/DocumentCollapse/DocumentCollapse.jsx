@@ -1,5 +1,5 @@
 import { Button, Collapse, Stack, Text, useDisclosure } from '@chakra-ui/react'
-import { PopoverIcon } from '../PopoverIcon/PopOverIcon'
+import { PopOverIcon } from '../PopOverIcon/PopOverIcon'
 
 export const DocumentCollapse = () => {
   const { isOpen, onToggle } = useDisclosure()
@@ -7,7 +7,7 @@ export const DocumentCollapse = () => {
     <>
       <Button justifyContent="space-between" variant="tertiary" size="lg" onClick={onToggle}>
         <Text as="span">Documents</Text>
-        <PopoverIcon isOpen={isOpen} />
+        <PopOverIcon isOpen={isOpen} />
       </Button>
       <Collapse in={isOpen} animateOpacity>
         <Stack spacing="1" alignItems="stretch" ps="4">
