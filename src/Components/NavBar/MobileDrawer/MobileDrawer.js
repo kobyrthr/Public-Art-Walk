@@ -1,6 +1,6 @@
 import { Button, Drawer, DrawerBody, DrawerContent, Stack, useDisclosure } from '@chakra-ui/react'
 import { DocumentCollapse } from '../DocumentCollapse/DocumentCollapse'
-import { ToggleButton } from './ToggleButton'
+import { ToggleButton } from '../ToggleButton/ToggleButton'
 
 export const MobileDrawer = () => {
   const { isOpen, onToggle, onClose } = useDisclosure()

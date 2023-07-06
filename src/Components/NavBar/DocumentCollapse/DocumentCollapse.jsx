@@ -6,7 +6,7 @@ export const DocumentCollapse = () => {
   return (
     <>
       <Button justifyContent="space-between" variant="tertiary" size="lg" onClick={onToggle}>
-        <Text as="span">Documents</Text>
+        <Text as="span">Menu</Text>
         <PopOverIcon isOpen={isOpen} />
       </Button>
       <Collapse in={isOpen} animateOpacity>
