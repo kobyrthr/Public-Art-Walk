@@ -93,6 +93,14 @@
         padding: 8px;
         min-width: 200px;
     }
+    .drawerbtn{
+        position: absolute;
+        z-index: 1;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        bottom: 25px;
+    }
   
 }
 

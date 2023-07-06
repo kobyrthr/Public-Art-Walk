@@ -48,9 +48,11 @@ export default function LeftSidebar({pins}) {
 
     {/* // CHAKRA COMPONENT */}
     <div>
-    <Button ref={btnRef} colorScheme='teal' onClick={onOpen}>
-        Open
+    <div className={styles.drawerbtn}>
+    <Button ref={btnRef} colorScheme='teal' onClick={onOpen} >
+        Show Locations
     </Button>
+    </div>
     <Drawer
     isOpen={isOpen}
     placement='bottom'
@@ -61,13 +63,8 @@ export default function LeftSidebar({pins}) {
     <DrawerContent>
       <DrawerCloseButton />
       <DrawerHeader>Locations</DrawerHeader>
-
       <DrawerBody>
       <div className= {styles.mobileSidebar}>
-        {/* <div className='heading'>
-          <h1>Locations</h1>
-        </div> */}
-        <br></br>
        <div className={styles.locList}>
          {pins.map((pin,index)=>{
             return <li className={styles.locListItem} key={index}>
@@ -82,13 +79,6 @@ export default function LeftSidebar({pins}) {
         <div id={styles.listings} className={styles.listings}></div>
     </div>
       </DrawerBody>
-
-      <DrawerFooter>
-        <Button variant='outline' mr={3} onClick={onClose}>
-          Cancel
-        </Button>
-        <Button colorScheme='blue'>Save</Button>
-      </DrawerFooter>
     </DrawerContent>
   </Drawer>
 
