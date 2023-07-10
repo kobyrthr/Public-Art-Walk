@@ -57,6 +57,9 @@
     padding: 8px;
     min-width: 200px;
 }
+.drawerbtn{
+    display: none;
+}
 
 /* CUSTOM COMPONENT MOBILE STYLING */
 @media screen and (max-width: 768px) {

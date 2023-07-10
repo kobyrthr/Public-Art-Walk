@@ -15,9 +15,9 @@ export const MobileDrawer = () => {
           lg: 'none',
         }}
       />
-      <Drawer placement="top" isOpen={isOpen} onClose={onClose}>
+      <Drawer placement="right" isOpen={isOpen} onClose={onClose} >
         <DrawerContent>
-          <DrawerBody mt="72px" p="4">
+          <DrawerBody p="4">
             <Stack spacing="1">
               <Button size="lg" variant="tertiary" justifyContent="start">
                 Dashboard
@@ -25,7 +25,6 @@ export const MobileDrawer = () => {
               <Button size="lg" variant="tertiary" justifyContent="start">
                 Analysis
               </Button>
-              <DocumentCollapse />
               <Button size="lg" variant="tertiary" justifyContent="start">
                 History
               </Button>
