@@ -64,7 +64,7 @@ const MapPage =()=> {
     <div className='container'>
     {/* {console.log(data.pins)} */}
     <div className="row">
-      <NavBar className=" columns twelve"/>
+      
     </div>
     <div className={styles.section}>
       <LeftSidebar pins={pins}/>

@@ -111,7 +111,7 @@ const suggestionEdit = async (e)=>{
     return(
         <div className="container">
             <div className="row">
-                <NavBar/>
+        
             </div>
             <div className="row sgstPage">            
                 {show? 

@@ -1,14 +1,98 @@
-import React from 'react'
+import { ReactNode } from 'react';
+import {
+  Box,
+  Flex,
+  Avatar,
+  HStack,
+  Link,
+  IconButton,
+  Button,
+  Menu,
+  MenuButton,
+  MenuList,
+  MenuItem,
+  MenuDivider,
+  useDisclosure,
+  useColorModeValue,
+  Stack,
+} from '@chakra-ui/react';
+import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
 
-function NavBar() {
+const Links = [
+  {'item':'Landing Page',
+    'to':'/'}
+    ,{'item':'Suggestions',
+    'to':'/'}
+  ];
+
+const NavLink = ({ children }: { children: ReactNode }) => (
+  <Link
+    px={2}
+    py={1}
+    rounded={'md'}
+    _hover={{
+      textDecoration: 'none',
+      bg: useColorModeValue('black.200'), 
+    }}
+    href={'#'}>
+    {children}
+  </Link>
+);
+
+export default function Simple() {
+  const { isOpen, onOpen, onClose } = useDisclosure();
+
   return (
-    <div className='navbar columns twelve'>
+    <>
+      <Box px={4}>
+        <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
+          <IconButton
+            size={'md'}
+            icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
+            aria-label={'Open Menu'}
+            display={{ md: 'none' }}
+            onClick={isOpen ? onClose : onOpen}
+          />
+          <HStack spacing={8} alignItems={'center'}>
+            <Box as='b'>Public Art Walk</Box>
+            <HStack
+              as={'nav'}
+              spacing={4}
+              display={{ base: 'none', md: 'flex' }}>
+              {Links.map((link,i) => (
+                <NavLink key={i} href={link.to}>{link.item}</NavLink>
+              ))}
+            </HStack>
+          </HStack>
+          <Flex alignItems={'center'}>
+            <Menu>
+              <MenuButton
+                as={Button}
+                rounded={'full'}
+                variant={'link'}
+                cursor={'pointer'}
+                minW={0}>
+              </MenuButton>
+              <MenuList>
+                <MenuItem>Link 1</MenuItem>
+                <MenuItem>Link 2</MenuItem>
+                <MenuDivider />
+                <MenuItem>Link 3</MenuItem>
+              </MenuList>
+            </Menu>
+          </Flex>
+        </Flex>
 
-        <h1> Public Art Walk</h1>
-        <a href="/"><li>Map</li></a>
-        <a href="/suggestions"><li>Suggestions</li></a>
-    </div>
-  )
+        {isOpen ? (
+          <Box pb={4} display={{ md: 'none' }} pos='absolute' left='0' zIndex='sticky' bg='white' w='100%' pl='16px'>
+            <Stack as={'nav'} spacing={4}>
+              {Links.map((link,i) => (
+                <NavLink key={i} href={link.to}>{link.item}</NavLink>
+              ))}
+            </Stack>
+          </Box>
+        ) : null}
+      </Box>
+    </>
+  );
 }
-
-export default NavBar

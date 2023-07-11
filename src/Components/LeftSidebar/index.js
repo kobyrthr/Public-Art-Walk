@@ -59,7 +59,7 @@ export default function LeftSidebar({pins}) {
     onClose={onClose}
     finalFocusRef={btnRef}
     >
-    <DrawerOverlay />
+    <DrawerOverlay/>
     <DrawerContent>
       <DrawerCloseButton />
       <DrawerHeader>Locations</DrawerHeader>

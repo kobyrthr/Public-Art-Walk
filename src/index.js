@@ -10,6 +10,7 @@ import SubmitPage from './Pages/Submit page';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
 import { ChakraProvider } from '@chakra-ui/react'
+import NavBar from './Components/NavBar';
 
 
 const client = new ApolloClient({
@@ -22,8 +23,10 @@ const client = new ApolloClient({
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <ApolloProvider client={client}>
+
     <BrowserRouter>
       <ChakraProvider>
+        <NavBar></NavBar>
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/Map" element={<MapPage />} />
