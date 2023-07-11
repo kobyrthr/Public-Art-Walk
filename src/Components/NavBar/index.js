@@ -25,19 +25,7 @@ const Links = [
     'to':'/'}
   ];
 
-const NavLink = ({ children }: { children: ReactNode }) => (
-  <Link
-    px={2}
-    py={1}
-    rounded={'md'}
-    _hover={{
-      textDecoration: 'none',
-      bg: useColorModeValue('black.200'), 
-    }}
-    href={'#'}>
-    {children}
-  </Link>
-);
+
 
 export default function Simple() {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -60,7 +48,7 @@ export default function Simple() {
               spacing={4}
               display={{ base: 'none', md: 'flex' }}>
               {Links.map((link,i) => (
-                <NavLink key={i} href={link.to}>{link.item}</NavLink>
+                <Link key={i} href={link.to}>{link.item}</Link>
               ))}
             </HStack>
           </HStack>
@@ -87,7 +75,7 @@ export default function Simple() {
           <Box pb={4} display={{ md: 'none' }} pos='absolute' left='0' zIndex='sticky' bg='white' w='100%' pl='16px'>
             <Stack as={'nav'} spacing={4}>
               {Links.map((link,i) => (
-                <NavLink key={i} href={link.to}>{link.item}</NavLink>
+                <Link key={i} href={link.to}>{link.item}</Link>
               ))}
             </Stack>
           </Box>
