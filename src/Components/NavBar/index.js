@@ -79,7 +79,7 @@ export default function Simple() {
         </Flex>
 
         {isOpen ? (
-          <Box pb={4} display={{ md: 'none' }}>
+          <Box pb={4} display={{ md: 'none' }} pos='absolute' left='0' zIndex='sticky' bg='white' w='100%' pl='16px'>
             <Stack as={'nav'} spacing={4}>
               {Links.map((link) => (
                 <NavLink key={link}>{link}</NavLink>
