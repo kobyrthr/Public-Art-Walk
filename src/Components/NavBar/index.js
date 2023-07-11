@@ -18,7 +18,12 @@ import {
 } from '@chakra-ui/react';
 import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
 
-const Links = ['Dashboard', 'Projects', 'Team'];
+const Links = [
+  {'item':'Landing Page',
+    'to':'/'}
+    ,{'item':'Suggestions',
+    'to':'/'}
+  ];
 
 const NavLink = ({ children }: { children: ReactNode }) => (
   <Link
@@ -49,13 +54,13 @@ export default function Simple() {
             onClick={isOpen ? onClose : onOpen}
           />
           <HStack spacing={8} alignItems={'center'}>
-            <Box>Logo</Box>
+            <Box as='b'>Public Art Walk</Box>
             <HStack
               as={'nav'}
               spacing={4}
               display={{ base: 'none', md: 'flex' }}>
-              {Links.map((link) => (
-                <NavLink key={link}>{link}</NavLink>
+              {Links.map((link,i) => (
+                <NavLink key={i} href={link.to}>{link.item}</NavLink>
               ))}
             </HStack>
           </HStack>
@@ -81,8 +86,8 @@ export default function Simple() {
         {isOpen ? (
           <Box pb={4} display={{ md: 'none' }} pos='absolute' left='0' zIndex='sticky' bg='white' w='100%' pl='16px'>
             <Stack as={'nav'} spacing={4}>
-              {Links.map((link) => (
-                <NavLink key={link}>{link}</NavLink>
+              {Links.map((link,i) => (
+                <NavLink key={i} href={link.to}>{link.item}</NavLink>
               ))}
             </Stack>
           </Box>
