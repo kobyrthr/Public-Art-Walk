@@ -17,12 +17,13 @@ import {
   Stack,
 } from '@chakra-ui/react';
 import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
+import styles from './NavBar.module.css'
 
 const Links = [
   {'item':'Landing Page',
     'to':'/'}
-    ,{'item':'Suggestions',
-    'to':'/'}
+    // ,{'item':'Suggestions',
+    // 'to':'/suggestions'}
   ];
 
 
@@ -32,7 +33,7 @@ export default function Simple() {
 
   return (
     <>
-      <Box px={4}>
+      <Box px={4} className={styles.NavBar}>
         <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
           <IconButton
             size={'md'}
@@ -42,7 +43,9 @@ export default function Simple() {
             onClick={isOpen ? onClose : onOpen}
           />
           <HStack spacing={8} alignItems={'center'}>
-            <Box as='b'>Public Art Walk</Box>
+            <Box >
+              <h1>Public Art Walk</h1>
+            </Box>
             <HStack
               as={'nav'}
               spacing={4}
