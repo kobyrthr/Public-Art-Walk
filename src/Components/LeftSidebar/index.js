@@ -3,7 +3,6 @@ import styles from './LeftSidebar.module.css'
 import {
   Drawer,
   DrawerBody,
-  DrawerFooter,
   DrawerHeader,
   DrawerOverlay,
   DrawerContent,

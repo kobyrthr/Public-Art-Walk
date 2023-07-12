@@ -26,8 +26,6 @@ const Links = [
     // 'to':'/suggestions'}
   ];
 
-
-
 export default function Simple() {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
@@ -75,10 +73,10 @@ export default function Simple() {
         </Flex>
 
         {isOpen ? (
-          <Box pb={4} display={{ md: 'none' }} pos='absolute' left='0' zIndex='sticky' bg='white' w='100%' pl='16px'>
+          <Box pb={4} display={{ md: 'none' }} pos='absolute' left='0' zIndex='sticky' bg='black' w='100%' pl='16px'>
             <Stack as={'nav'} spacing={4}>
               {Links.map((link,i) => (
-                <Link key={i} href={link.to}>{link.item}</Link>
+                <Link key={i} href={link.to} align='center'>{link.item}</Link>
               ))}
             </Stack>
           </Box>

@@ -4,3 +4,12 @@ h1{
     font-size: 2em;
     
 }
+
+.NavBar{
+    background-color: black;
+    color: white;
+}
+
+a:hover{
+    color:white;
+}
