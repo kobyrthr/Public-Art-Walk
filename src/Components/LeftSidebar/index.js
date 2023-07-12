@@ -3,7 +3,6 @@ import styles from './LeftSidebar.module.css'
 import {
   Drawer,
   DrawerBody,
-  DrawerFooter,
   DrawerHeader,
   DrawerOverlay,
   DrawerContent,
@@ -27,7 +26,7 @@ export default function LeftSidebar({pins}) {
     {/* // CUSTOM COMPONENT */}
     <div className= {styles.sidebar}>
         <div className='heading'>
-          <h1>Locations</h1>
+          <h2>Locations</h2>
         </div>
         <br></br>
        <div className={styles.locList}>

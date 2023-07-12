@@ -1,4 +1,8 @@
 /* MAPBOX COMPONENT STYLING */
+h2{
+    font-family: 'Playfair Display';
+    font-size: 1.5em;
+}
 .listings .item {
     border-bottom: 1px solid #eee;
     padding: 10px;
@@ -34,6 +38,7 @@
     bottom: 0;
     z-index: 10;
     background-color: rgba(255, 255, 255, 0);
+    padding-left: 16px;
 
   }
 .mobileSidebar{
