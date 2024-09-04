@@ -4,8 +4,13 @@
   box-sizing: border-box;
 }
 
+#root{
+  background-color: black;
+
+}
 .container{
   width:100% !important;
+
 }
 
 body {
@@ -225,31 +230,7 @@ border-bottom: 1px solid #EEEEEE;
 padding: 8px;
 }
 
-.home-div{
-  background-image: url("../public/images/Public\ Art\ Walk.png");
-  min-width: 100vw;
-  min-height: 100vh;
-  background-size: cover;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: space-around;
-}
 
-.home-div h1{
-  color:white;
-
-  margin: 0 auto;
-  font-size: 200px;
-  font-family: 'Times New Roman', Times, serif;
-}
-
-.home-div button{
-  color:white;
-
-  margin: 0 auto;
-  font-size: 20px;
-}
 
 .row{
   display:flex;

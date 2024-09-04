@@ -1,0 +1,39 @@
+.homeDiv{
+    background-image: url("~/public/images/Public\ Art\ Walk.png");
+    min-width: 100vw;
+    min-height: 100vh;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .homeDiv h1{
+    color:white;
+    line-height: 100%;
+    font-size: 200px;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+  }
+  
+  .homeDiv button{
+    color:white;
+    margin: 0 auto;
+    font-size: 20px;
+  }
+
+
+  @media screen and (max-width: 768px) {
+
+    .homeDiv h1{
+        color:white;
+        line-height: 100%;
+        font-size: 80px;
+        font-family: 'Times New Roman', Times, serif;
+        text-align: center;
+      }
+    
+  }
