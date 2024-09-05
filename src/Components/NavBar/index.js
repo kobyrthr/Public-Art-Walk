@@ -42,15 +42,15 @@ export default function Simple() {
           />
           <HStack spacing={8} alignItems={'center'}>
             <Box >
-              <h1>Public Art Walk</h1>
+              <a href="/"><h1>Public Art Walk</h1></a>
             </Box>
             <HStack
               as={'nav'}
               spacing={4}
               display={{ base: 'none', md: 'flex' }}>
-              {Links.map((link,i) => (
+              {/* {Links.map((link,i) => (
                 <Link key={i} href={link.to}>{link.item}</Link>
-              ))}
+              ))} */}
             </HStack>
           </HStack>
           <Flex alignItems={'center'}>
