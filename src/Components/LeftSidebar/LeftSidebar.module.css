@@ -37,7 +37,8 @@ h2{
     position: sticky;
     bottom: 0;
     z-index: 10;
-    background-color: rgba(255, 255, 255, 0);
+    background-color:white;
+    color:black;
     padding-left: 16px;
 
   }
