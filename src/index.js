@@ -26,7 +26,6 @@ root.render(
 
     <BrowserRouter>
       <ChakraProvider>
-        <NavBar></NavBar>
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/Map" element={<MapPage />} />
