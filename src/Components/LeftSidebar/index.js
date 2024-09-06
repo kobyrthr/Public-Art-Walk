@@ -54,6 +54,7 @@ export default function LeftSidebar({pins}) {
     placement='bottom'
     onClose={onClose}
     finalFocusRef={btnRef}
+    isFullHeight={true}
     >
     <DrawerOverlay/>
     <DrawerContent>
