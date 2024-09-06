@@ -57,7 +57,7 @@ export default function LeftSidebar({pins}) {
     isFullHeight={true}
     >
     <DrawerOverlay/>
-    <DrawerContent>
+    <DrawerContent maxH={`80%`}>
       <DrawerCloseButton />
       <DrawerHeader>Locations</DrawerHeader>
       <DrawerBody>
