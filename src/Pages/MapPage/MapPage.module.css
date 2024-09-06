@@ -32,7 +32,7 @@
     width: 100vw;
     display: flex;
     flex-direction: column;
-    position: absolute;
+    position: fixed;
     overflow: hidden;
   }
 
