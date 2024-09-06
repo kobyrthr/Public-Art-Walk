@@ -28,11 +28,12 @@
     position: relative;
   }
   .container {
-    height: 100vh;
+    height: 95vh;
     width: 100vw;
     display: flex;
     flex-direction: column;
     position: absolute;
+    overflow: hidden;
   }
 
     .sidebar{
