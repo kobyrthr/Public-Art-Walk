@@ -29,7 +29,7 @@ h2{
 /* CUSTOM CHAKRA COMPONENT STYLING */
 .sidebar {
     width: 25vw;
-    height: 100%;
+    height: 100vh;
     top: 0;
     left: 0;
     overflow: hidden;

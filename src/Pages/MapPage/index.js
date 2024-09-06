@@ -61,14 +61,13 @@ const MapPage =()=> {
   const pins  = data.pins;
 
   return(
-    <div className='container'>
+    <div className={styles.container}>
     {/* {console.log(data.pins)} */}
-  
-    <div className="row">  
-    <NavBar></NavBar>
-    </div>
+      <div className="row">  
+        <NavBar></NavBar>
+      </div>
+      <div className="row"> 
 
-    <div className={styles.section}>
       <LeftSidebar pins={pins}/>
       <div className={styles.mapWrapper}>
         <ReactMapGL
@@ -127,9 +126,11 @@ const MapPage =()=> {
         </ReactMapGL>
       </div>
     
-    </div>
+
+      </div>
+
         
-</div>
+    </div>  
   )
 
 }
