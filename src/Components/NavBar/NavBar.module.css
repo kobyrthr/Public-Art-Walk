@@ -8,6 +8,7 @@ h1{
 .NavBar{
     background-color: black;
     color: white;
+    width: 100%;
 }
 
 a:hover{

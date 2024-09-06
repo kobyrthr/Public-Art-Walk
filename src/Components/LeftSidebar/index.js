@@ -32,8 +32,8 @@ export default function LeftSidebar({pins}) {
        <div className={styles.locList}>
          {pins.map((pin,index)=>{
             return <li className={styles.locListItem} key={index}>
-
-            <span>{pin.street}, {pin.postalCode}</span><br></br>
+            <span>{pin.street}, {pin.postalCode}</span>
+            <br></br>
             Artist: {pin.artist}<br></br>
             {/* Year: {pin.year}<br></br> */}
 
@@ -43,10 +43,7 @@ export default function LeftSidebar({pins}) {
         <div id={styles.listings} className={styles.listings}></div>
     </div>
     
-
-
     {/* // CHAKRA COMPONENT */}
-    <div>
     <div className={styles.drawerbtn}>
     <Button ref={btnRef} colorScheme='teal' onClick={onOpen} >
         Show Locations
@@ -57,9 +54,10 @@ export default function LeftSidebar({pins}) {
     placement='bottom'
     onClose={onClose}
     finalFocusRef={btnRef}
+    isFullHeight={true}
     >
     <DrawerOverlay/>
-    <DrawerContent>
+    <DrawerContent maxH={`80%`}>
       <DrawerCloseButton />
       <DrawerHeader>Locations</DrawerHeader>
       <DrawerBody>
@@ -81,7 +79,6 @@ export default function LeftSidebar({pins}) {
     </DrawerContent>
   </Drawer>
 
-    </div>
 
     
     
