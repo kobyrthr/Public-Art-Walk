@@ -38,23 +38,8 @@ query Assets {
 
 const MapPage =()=> {
   const { loading, error, data } = useQuery(QUERY,{});
- 
-  // const [pins, setPins] = useState([])
   const [showPopup, setShowPopup] = useState(true);
   const [popupInfo, setPopupInfo] = useState(null);
-  // const slash = "http://localhost:4000/api"
-
-  // useEffect(()=>{
-  //   const getPins = async () =>{
-  //     try {
-  //       const allPins = await axios.get(slash+'/pins');
-  //       setPins(allPins.data)
-  //     } catch (error) {
-  //       console.log(error)
-  //     }
-  //   }
-  //   getPins();
-  // },[])
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error :(</p>;
@@ -62,7 +47,6 @@ const MapPage =()=> {
 
   return(
     <div className={styles.container}>
-    {/* {console.log(data.pins)} */}
       <div className="row">  
         <NavBar></NavBar>
       </div>
@@ -119,9 +103,6 @@ const MapPage =()=> {
                     <img width="100%" src={popupInfo.image.url} />
                   </Popup>
                 )}
-
-            
-
             </ReactMapGL>
           </div>
       </div>
