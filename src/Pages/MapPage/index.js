@@ -66,73 +66,67 @@ const MapPage =()=> {
       <div className="row">  
         <NavBar></NavBar>
       </div>
-      <div className="row"> 
-
-      <LeftSidebar pins={pins}/>
-      <div className={styles.mapWrapper}>
-        <ReactMapGL
-          initialViewState={{
-            longitude: -76.6122,
-            latitude: 39.2904,
-            zoom: 13,
-            pitch:60
-          }}
-          style={{height: '100vh'}}
-          mapStyle="mapbox://styles/mapbox/light-v10"
-          mapboxAccessToken={process.env.REACT_APP_MAPBOX_GL_ACCESS_TOKEN}
-        >
-
-          {
-            pins.map((pin,index)=>{
-
-          return <>
-          {console.log(`I am a pin: ${pin}`)}
-          <Marker
-            key={index}
-            longitude={pin.location.longitude}
-            latitude={pin.location.latitude}
-            color="dodgerblue"
-            anchor="bottom"
-            onClick={e => {
-                e.originalEvent.stopPropagation();
-                setPopupInfo(pin);
+      <div className={styles.mapBoxRow}> 
+          <LeftSidebar pins={pins}/>
+          <div className={styles.mapWrapper}>
+            <ReactMapGL
+              initialViewState={{
+                longitude: -76.6122,
+                latitude: 39.2904,
+                zoom: 13,
+                pitch:60
               }}
-          /> 
-          </>
-  
+              style={{height: '100vh'}}
+              mapStyle="mapbox://styles/mapbox/light-v10"
+              mapboxAccessToken={process.env.REACT_APP_MAPBOX_GL_ACCESS_TOKEN}
+            >
+
+              {
+                pins.map((pin,index)=>{
+
+              return <>
+              {console.log(`I am a pin: ${pin}`)}
+              <Marker
+                key={index}
+                longitude={pin.location.longitude}
+                latitude={pin.location.latitude}
+                color="dodgerblue"
+                anchor="bottom"
+                onClick={e => {
+                    e.originalEvent.stopPropagation();
+                    setPopupInfo(pin);
+                  }}
+              /> 
+              </>
+      
+                
+            })}
+        
+
+            {popupInfo && (
+                  <Popup
+                    anchor="top"
+                    longitude={Number(popupInfo.location.longitude)}
+                    latitude={Number(popupInfo.location.latitude)}
+                    onClose={() => setPopupInfo(null)}
+                  >
+                    <div>
+
+                      <strong>Artist</strong>: {popupInfo.artist}<br></br>
+                      <strong>Address</strong>: {popupInfo.street}, PostalCode: {popupInfo.postalCode}<br></br>
+                      {/* <strong>Year</strong>: {popupInfo.Year}<br></br> */}
+                    </div>
+                    <img width="100%" src={popupInfo.image.url} />
+                  </Popup>
+                )}
+
             
-        })}
-    
 
-        {popupInfo && (
-              <Popup
-                anchor="top"
-                longitude={Number(popupInfo.location.longitude)}
-                latitude={Number(popupInfo.location.latitude)}
-                onClose={() => setPopupInfo(null)}
-              >
-                <div>
-
-                  <strong>Artist</strong>: {popupInfo.artist}<br></br>
-                  <strong>Address</strong>: {popupInfo.street}, PostalCode: {popupInfo.postalCode}<br></br>
-                  {/* <strong>Year</strong>: {popupInfo.Year}<br></br> */}
-                </div>
-                <img width="100%" src={popupInfo.image.url} />
-              </Popup>
-            )}
-
-        
-
-        </ReactMapGL>
+            </ReactMapGL>
+          </div>
       </div>
-    
-
-      </div>
-
-        
     </div>  
-  )
-
-}
+)
+} 
 
 export default MapPage  
