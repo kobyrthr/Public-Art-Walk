@@ -16,8 +16,8 @@
     color:white;
     line-height: 100%;
     font-size: 200px;
-    font-family: 'Times New Roman', Times, serif;
-    text-align: center;
+    font-family: 'Oswald', Arial, Helvetica, sans-serif;    text-align: center;
+    letter-spacing: -12px;
   }
   
   .homeDiv button{
@@ -36,8 +36,8 @@
         color:white;
         line-height: 100%;
         font-size: 80px;
-        font-family: 'Times New Roman', Times, serif;
         text-align: center;
+        letter-spacing: -4px;
       }
     
   }

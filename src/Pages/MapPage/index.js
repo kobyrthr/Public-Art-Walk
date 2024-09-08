@@ -57,7 +57,7 @@ const MapPage =()=> {
               initialViewState={{
                 longitude: -76.6122,
                 latitude: 39.2904,
-                zoom: 13,
+                zoom: 12,
                 pitch:60
               }}
               style={{height: '100vh'}}
