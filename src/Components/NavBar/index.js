@@ -42,7 +42,7 @@ export default function Simple() {
           />
           <HStack spacing={8} alignItems={'center'}>
             <Box >
-              <a href="/"><h1>Public Art Walk</h1></a>
+              <a href="/"><h1>PUBLIC ART WALK</h1></a>
             </Box>
             <HStack
               as={'nav'}
