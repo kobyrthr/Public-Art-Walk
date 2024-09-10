@@ -1,43 +1,204 @@
-.homeDiv{
-    background-image: url("~/public/images/Public\ Art\ Walk.png");
-    min-width: 100vw;
-    min-height: 100vh;
-    background-color: black;
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
+.wrapper {
+  background: #1e1e1e;
+  position: relative;
+  min-height: 100vh;
+  position: relative;
+  z-index: 1;
+}
+.img1,
+.img2,
+.img3,
+.img4,
+.img5,
+.img6,
+.img7 {
+  height: auto;
+  width: 100%;
+  position: absolute;
+  object-fit: cover; /* Ensure images are not stretched */
+  z-index: -1;
+}
+
+/* Set individual image dimensions */
+.img1 {
+  top: 0%;
+  left: 22%;
+  width: 9%; /* Adjust image size based on viewport width */
+
+  aspect-ratio: 223 / 250; /* Maintain the original aspect ratio */
+}
+
+.img2 {
+  top: 10%;
+  right: 35%;
+  width: 20%;
+
+  aspect-ratio: 467 / 255;
+}
+
+.img3 {
+  top: 0;
+  right: 0;
+  width: 22%;
+
+  aspect-ratio: 333 / 154;
+}
+
+.img4 {
+  bottom: 18%;
+  left: 0%;
+  width: 9%;
+
+  aspect-ratio: 195 / 395.79;
+}
+
+.img5 {
+  bottom: 0%;
+  left: 22%;
+  width: 15%;
+
+  aspect-ratio: 346 / 302;
+}
+
+.img6 {
+  bottom: 10%;
+  right: 10%;
+
+  width: 30%;
+
+  aspect-ratio: 566 / 242;
+}
+
+.img7 {
+  top: 55%;
+  right: 0;
+  transform: translateY(-50%);
+  width: 5%;
+
+  aspect-ratio: 100 / 383;
+}
+.infoContainer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 1399px;
+  width: 100%;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 64px;
+  padding: 80px 0;
+}
+
+.heading {
+  font-family: "Oswald", sans-serif;
+  font-size: 10vw;
+  font-weight: 700;
+  line-height: 100%;
+  color: #fff;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.switch {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  width: 182px;
+  height: 91px;
+  border: 3px solid #fff;
+  position: relative;
+  border-radius: 80px;
+  z-index: 1;
+  cursor: pointer;
+
+  overflow: hidden;
+}
+
+.switch::before {
+  content: "";
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  border-radius: 50%;
+  background: #ffcc00;
+  z-index: -1;
+  transform: translateX(-3px);
+  transition: transform 0.3s ease;
+  border: 3px solid #fff;
+}
+
+.toggled::before {
+  transform: translateX(calc(100% - 6px));
+}
+.arrow {
+  font-size: 48px;
+  margin: 0 auto;
+  color: #1e1e1e;
+  transition: 0.3s;
+}
+.walk {
+  font-size: 48px;
+  margin: 0 auto;
+  color: #fff;
+  transition: 0.3s;
+}
+.toggled .arrow {
+  color: #fff;
+}
+.toggled .walk {
+  color: #1e1e1e;
+}
+
+@media only screen and (max-width: 991px) {
+  .infoContainer {
+    gap: 32px;
   }
-  
-  .homeDiv h1{
-    color:white;
-    line-height: 100%;
-    font-size: 200px;
-    font-family: 'Oswald', Arial, Helvetica, sans-serif;    text-align: center;
-    letter-spacing: -12px;
-  }
-  
-  .homeDiv button{
-    color:white;
-    margin: 0 auto;
-    font-size: 20px;
-    border: 1px solid white;
-    padding: 6px 12px;
+  .heading {
+    font-size: 15vw;
   }
 
-
-  @media screen and (max-width: 768px) {
-
-
-    .homeDiv h1{
-        color:white;
-        line-height: 100%;
-        font-size: 80px;
-        text-align: center;
-        letter-spacing: -4px;
-      }
-    
+  .switch {
+    width: 150px;
+    height: 75px;
+    border-radius: 75px;
   }
+
+  .arrow,
+  .walk {
+    max-width: 40px;
+  }
+  .img1 {
+    width: 20%;
+    left: 10%; /* Adjusted from 22% to 25% */
+  }
+
+  .img2 {
+    top: 18%;
+    width: 30%; /* Increased width proportionally */
+  }
+
+  .img3 {
+    width: 30%; /* Increased width proportionally */
+    top: 5%;
+  }
+
+  .img4 {
+    width: 18%; /* Increased width proportionally */
+  }
+
+  .img5 {
+    width: 22%; /* Increased width proportionally */
+  }
+
+  .img6 {
+    width: 40%; /* Increased width proportionally */
+  }
+
+  .img7 {
+    width: 8%; /* Increased width proportionally */
+  }
+}
