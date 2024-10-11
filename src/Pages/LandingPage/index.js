@@ -12,7 +12,8 @@ const HeroSection = () => {
   const navigate = useNavigate();
 
   const handleClick = () => {
-    setIsToggled(prev => !prev);
+    // setIsToggled(prev => !prev);
+    navigate('/Map'); 
   };
 
   useEffect(() => {
@@ -53,9 +54,11 @@ const HeroSection = () => {
         <div
           ref={buttonRef}
           onClick={handleClick}
-          className={[classes.switch, isToggled && classes.toggled].join(" ")}
+          // className={[classes.switch, isToggled && classes.toggled].join(" ")}
+          className={classes.button}
         >
-          <FiArrowRightCircle className={classes.arrow} />
+          {/* <FiArrowRightCircle className={classes.arrow} /> */}
+          Walk
           <FaPersonWalking className={classes.walk} />
         </div>
       </div>
